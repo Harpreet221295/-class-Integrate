@@ -34,4 +34,14 @@ class Integrate(object):
             return self.trapezoid(a, b, f, n)
         elif method== 'simpson':
             return self.simpson(a, b, f, n)
-        
+    
+    
+     def plot(self,function,lower,upper,N):
+        X1=arange(lower,upper,0.01)
+        plt.plot(X1,function(X1),'k')
+        X=linspace(lower,upper,N+1)
+        plt.vlines(X,0,function(X),'r')
+        plt.hlines(0,lower,upper,'r')
+        plt.plot(X,function(X),'r')
+        plt.fill_between(X,function(X),color='yellow')
+        plt.show()    
